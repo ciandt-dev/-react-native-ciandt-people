@@ -1,0 +1,30 @@
+{
+  "name": "ciandt_people",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "simulators": "xcrun simctl list devices",
+    "ios": "react-native run-ios",
+    "ios-7": "npm run ios -- --simulator=\"iPhone 7\"",
+    "ios-7+": "npm run ios -- --simulator=\"iPhone 7 Plus\"",
+    "ios-8": "npm run ios -- --simulator=\"iPhone 8\"",
+    "ios-8+": "npm run ios -- --simulator=\"iPhone 8 Plus\"",
+    "ios-X": "npm run ios -- --simulator=\"iPhone X\""
+  },
+  "dependencies": {
+    "react": "16.2.0",
+    "react-native": "0.52.2"
+  },
+  "devDependencies": {
+    "babel-jest": "22.1.0",
+    "babel-preset-react-native": "4.0.0",
+    "base-64": "^0.1.0",
+    "jest": "22.3",
+    "react-navigation": "^1.0.0-beta.27",
+    "react-test-renderer": "16.2.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
