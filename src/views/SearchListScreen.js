@@ -37,7 +37,7 @@ export class SearchListScreen extends Component {
         <FlatList
           data={this.state.results}
           renderItem={this.renderItem}
-          keyExtractor={(item, index) => index}
+          keyExtractor={(item, index) => item.login}
         />
       </View>
     )
