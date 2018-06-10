@@ -16,7 +16,7 @@ export const Profile = (props) => {
         style={styles.avatar}
         />
       <Text style={styles.name}>{props.name}</Text>
-      <Text style={styles.role}>{props.role}</Text>
+      <Text style={styles.position}>{props.position} ({props.location})</Text>
     </View>
   )
 }
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     color: '#125177',
   },
-  role: {
+  position: {
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 40,

@@ -1,8 +1,8 @@
-const API = `https://people.cit.com.br/search/json/`
+const BASE_URL = `https://people.cit.com.br`
 
 export const getUsers = (txt) => {
   const API_KEY = require('../Auth').API_KEY;
-  const url = `${API}?q=${txt}`
+  const url = `${BASE_URL}/search/json/?format=associative&q=${txt}`
   return fetch(url,
     {
       headers: {
@@ -12,19 +12,7 @@ export const getUsers = (txt) => {
       }
     })
     .then(res => res.json())
-    .then(res => {
-      return res.data
-      ? res.data.map(user => {
-        return {
-          name: user[0],
-          login: user[1],
-          role: user[4],
-          coach: user[5],
-          pdm: user[6],
-        }
-      })
-      : []
-    })
+    .then(res => res.data || [])
     .catch(console.error)
 }
 
@@ -38,7 +26,7 @@ export const getUserByLogin = (login) => {
 export const getAvatar = (login) => {
   const API_KEY = require('../Auth').API_KEY;
   return {
-    uri: `https://people.cit.com.br/photos/${login}.jpg`,
+    uri: `${BASE_URL}/photos/${login}.jpg`,
     method: 'GET',
     headers: {
       Authorization: `Basic ${API_KEY}`,

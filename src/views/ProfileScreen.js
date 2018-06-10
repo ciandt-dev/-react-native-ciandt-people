@@ -11,7 +11,7 @@ import { Profile } from '../components/Profile'
 
 export class ProfileScreen extends Component {
   static navigationOptions = ({navigation}) => {
-    const hasExtraInfo = navigation.state.params.coach || navigation.state.params.pdm
+    const hasExtraInfo = navigation.state.params.mentorLogin || navigation.state.params.managerLogin
     return hasExtraInfo
       ? { headerRight: <ProfileInfoButton navigation={navigation} /> }
       : {}

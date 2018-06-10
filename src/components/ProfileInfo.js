@@ -12,25 +12,25 @@ import { getAvatar } from '../services/peopleAPI'
 export const ProfileInfo = (props) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => props.onItemPress(props.coach)}>
+      <TouchableOpacity onPress={() => props.onItemPress(props.mentorLogin)}>
         <View style={styles.manager__item}>
           <Image
-            source={getAvatar(props.coach)}
+            source={getAvatar(props.mentorLogin)}
             resizeMode='contain'
             style={styles.manager__avatar}
           />
-          <Text style={styles.manager__lbl}>{props.coach}</Text>
+          <Text style={styles.manager__lbl}>{props.mentorLogin}</Text>
         </View>
       </TouchableOpacity>
       <ActivityIndicator size="small" color="#125177" animating={props.isLoading} />
-      <TouchableOpacity onPress={() => props.onItemPress(props.pdm)}>
+      <TouchableOpacity onPress={() => props.onItemPress(props.managerLogin)}>
         <View style={styles.manager__item}>
           <Image
-            source={getAvatar(props.pdm)}
+            source={getAvatar(props.managerLogin)}
             resizeMode='contain'
             style={styles.manager__avatar}
           />
-          <Text style={styles.manager__lbl}>{props.pdm}</Text>
+          <Text style={styles.manager__lbl}>{props.managerLogin}</Text>
         </View>
       </TouchableOpacity>
     </View>

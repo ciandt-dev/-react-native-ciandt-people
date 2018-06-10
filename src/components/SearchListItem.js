@@ -16,7 +16,7 @@ export class SearchListItem extends Component {
       <TouchableOpacity onPress={this.onPress}>
         <View style={styles.item}>
           <Text style={styles.item__name}>{this.props.item.name}</Text>
-          <Text style={styles.item__role}>{this.props.item.role}</Text>
+          <Text style={styles.item__position}>{this.props.item.position}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#125177',
   },
-  item__role: {
+  item__position: {
     fontSize: 12,
   },
 })
