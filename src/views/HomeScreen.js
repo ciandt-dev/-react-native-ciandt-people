@@ -31,7 +31,7 @@ export class HomeScreen extends Component {
     getUsers(this.state.name)
       .then(res => {
         res.length == 1
-          ? this.props.navigation.navigate('Profile', res[0])
+          ? this.props.navigation.navigate('ProfileInfo', res[0])
           : this.props.navigation.navigate('SearchList', {
             name: this.state.name,
             results: res

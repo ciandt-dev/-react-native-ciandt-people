@@ -37,7 +37,7 @@ export const SignedIn = StackNavigator(
       screen: ProfileInfoScreen,
       path: 'people/:name/info',
       navigationOptions: ({navigation}) => ({
-        title: `${getUserName(navigation.state.params.name)}'s Info`,
+        title: `${navigation.state.params.login}'s Info`,
       }),
     },
     SearchList: {
@@ -53,10 +53,6 @@ export const SignedIn = StackNavigator(
     }
   }
 )
-
-const getUserName = (name) => name.length > 15
-  ? name.split(' ').slice(0, 2).join(' ').substring(0, 15)
-  : name
 
 export const createRootNavigator = (signedIn = false) => {
   return StackNavigator(

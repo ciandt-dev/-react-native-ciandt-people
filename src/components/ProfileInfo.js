@@ -12,27 +12,35 @@ import { getAvatar } from '../services/peopleAPI'
 export const ProfileInfo = (props) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => props.onItemPress(props.mentorLogin)}>
-        <View style={styles.manager__item}>
-          <Image
-            source={getAvatar(props.mentorLogin)}
-            resizeMode='contain'
-            style={styles.manager__avatar}
-          />
-          <Text style={styles.manager__lbl}>{props.mentorLogin}</Text>
-        </View>
-      </TouchableOpacity>
-      <ActivityIndicator size="small" color="#125177" animating={props.isLoading} />
-      <TouchableOpacity onPress={() => props.onItemPress(props.managerLogin)}>
-        <View style={styles.manager__item}>
-          <Image
-            source={getAvatar(props.managerLogin)}
-            resizeMode='contain'
-            style={styles.manager__avatar}
-          />
-          <Text style={styles.manager__lbl}>{props.managerLogin}</Text>
-        </View>
-      </TouchableOpacity>
+      <View style={styles.info}>
+        <TouchableOpacity onPress={() => props.onItemPress(props.mentorLogin)}>
+          <View style={styles.manager__item}>
+            <Image
+              source={getAvatar(props.mentorLogin)}
+              resizeMode='contain'
+              style={styles.manager__avatar}
+            />
+            <Text style={styles.manager__lbl}>{props.mentorLogin}</Text>
+            <Text style={styles.manager__lbl_small}>Coach</Text>
+          </View>
+        </TouchableOpacity>
+        <ActivityIndicator
+          size="small"
+          color="#fff"
+          animating={props.isLoading}
+        />
+        <TouchableOpacity onPress={() => props.onItemPress(props.managerLogin)}>
+          <View style={styles.manager__item}>
+            <Image
+              source={getAvatar(props.managerLogin)}
+              resizeMode='contain'
+              style={styles.manager__avatar}
+            />
+            <Text style={styles.manager__lbl}>{props.managerLogin}</Text>
+            <Text style={styles.manager__lbl_small}>PDM</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -40,8 +48,15 @@ export const ProfileInfo = (props) => {
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
+    alignItems: 'stretch',
     flexDirection: 'row',
-    marginBottom: 20,
+    backgroundColor: '#1f9ddf',
+    paddingBottom: 20,
+  },
+  info: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginTop: -50,
   },
   manager__item: {
     alignItems: 'center',
@@ -52,11 +67,17 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderWidth: 3,
-    borderColor: 'rgba(0,0,0, 0.15)',
+    borderColor: '#1f9ddf',
     borderRadius: 50,
+    marginBottom: 5,
   },
   manager__lbl: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#fff',
+  },
+  manager__lbl_small: {
+    fontSize: 14,
+    color: '#fff',
   },
 })

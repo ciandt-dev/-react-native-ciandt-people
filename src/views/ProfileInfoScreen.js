@@ -27,7 +27,7 @@ export class ProfileInfoScreen extends Component {
     this.setState({isLoading: true})
 
     getUserByLogin(login)
-      .then(res => this.props.navigation.navigate('Profile', res))
+      .then(res => this.props.navigation.navigate('ProfileInfo', res))
       .then(() => this.setState({isLoading: false}))
       .catch(console.error);
   }

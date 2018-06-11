@@ -25,7 +25,7 @@ export class SearchListScreen extends Component {
   )
 
   onItemPress = (item) => {
-    this.props.navigation.navigate('Profile', item)
+    this.props.navigation.navigate('ProfileInfo', item)
   }
 
   render() {
