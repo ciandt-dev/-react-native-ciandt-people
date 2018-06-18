@@ -13,7 +13,9 @@ export const ProfileInfo = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.info}>
-        <TouchableOpacity onPress={() => props.onItemPress(props.mentorLogin)}>
+        <TouchableOpacity
+          style={styles.manager__item}
+          onPress={() => props.onItemPress(props.mentorLogin)}>
           <View style={styles.manager__item}>
             <Image
               source={getAvatar(props.mentorLogin)}
@@ -56,19 +58,20 @@ const styles = StyleSheet.create({
   info: {
     justifyContent: 'center',
     flexDirection: 'row',
-    marginTop: -50,
+    marginTop: 20,
   },
   manager__item: {
     alignItems: 'center',
     marginRight: 20,
     marginLeft: 20,
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+    overflow: 'hidden',
   },
   manager__avatar: {
     width: 100,
     height: 100,
-    borderWidth: 3,
-    borderColor: '#1f9ddf',
-    borderRadius: 50,
     marginBottom: 5,
   },
   manager__lbl: {
